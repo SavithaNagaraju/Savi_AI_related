@@ -1,0 +1,31 @@
+numpy
+rich
+pandas
+pypdf2
+tabulate
+click
+colorama
+python-dotenv
+aiofiles
+langchain
+langchain-aws
+langchain-mcp-adapters
+langchain-ollama
+# langchain-text splitters
+langchain-text-splitters
+langgraph
+langsmith
+beautifulsoup4
+httpx
+requests
+mcp
+mcp-use
+fastmcp
+uvicorn
+starlette
+agno
+ollama
+# wikipedia
+wikipedia-api
+tokenizers
+tqdm
