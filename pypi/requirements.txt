@@ -23,6 +23,7 @@ mcp-use
 fastmcp
 uvicorn
 starlette
+sse_starlette
 agno
 ollama
 # wikipedia
