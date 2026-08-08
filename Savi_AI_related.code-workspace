@@ -1,8 +1,19 @@
 {
+<<<<<<< HEAD
 	"folders": [
 		{
 			"path": "."
 		}
 	],
 	"settings": {}
+=======
+    "folders": [
+        {
+            "path": "."
+        },
+        {
+            "path": "../mcp_project"
+        }
+    ]
+>>>>>>> 136a0312b7658d26fa59dc93ba003ee0c8464b0c
 }
