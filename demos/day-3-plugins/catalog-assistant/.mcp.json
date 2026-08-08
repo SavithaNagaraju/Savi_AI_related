@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "catalog": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/servers/product-catalog-server.mjs"
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Segoe UI","primaryColor":"#fffdf8","primaryTextColor":"#182126","primaryBorderColor":"#182126","lineColor":"#182126","secondaryColor":"#147d79","tertiaryColor":"#efbf4b"},"flowchart":{"curve":"linear"}}}%%
+flowchart LR
+    request["User request"] --> listing["Skill names and descriptions"]
+    listing --> match{"Description matches?"}
+    match -->|Yes| load["Load SKILL.md instructions"]
+    match -->|No| normal["Continue without the Skill"]
+    load --> args["Substitute arguments and context"]
+    args --> tools["Claude selects permitted tools"]
+    tools --> result["Task result"]
+    result --> evaluate{"Meets assertions?"}
+    evaluate -->|Yes| done["Keep and share"]
+    evaluate -->|No| revise["Revise description or instructions"]
+    revise --> request
+
+    classDef start fill:#d85f42,color:#fffdf8,stroke:#182126,stroke-width:3px;
+    classDef action fill:#fffdf8,color:#182126,stroke:#182126,stroke-width:3px;
+    classDef decision fill:#efbf4b,color:#182126,stroke:#182126,stroke-width:3px;
+    classDef success fill:#147d79,color:#fffdf8,stroke:#182126,stroke-width:3px;
+    class request start;
+    class listing,load,args,tools,result,normal,revise action;
+    class match,evaluate decision;
+    class done success;

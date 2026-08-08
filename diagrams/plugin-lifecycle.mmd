@@ -1,0 +1,31 @@
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Segoe UI","primaryColor":"#fffdf8","primaryTextColor":"#182126","primaryBorderColor":"#182126","lineColor":"#182126","secondaryColor":"#147d79","tertiaryColor":"#efbf4b"},"flowchart":{"curve":"linear"}}}%%
+flowchart LR
+    prototype["Prototype in .claude"] --> stable{"Workflow stable?"}
+    stable -->|No| prototype
+    stable -->|Yes| package["Create plugin manifest and namespace"]
+
+    subgraph bundle["Plugin bundle"]
+        skills["Skills"]
+        agents["Agents"]
+        hooks["Hooks"]
+        mcp["MCP servers"]
+    end
+
+    package --> bundle
+    bundle --> local["Load with --plugin-dir"]
+    local --> tests["Run behavior and abuse tests"]
+    tests --> valid{"Validation passes?"}
+    valid -->|No| package
+    valid -->|Yes| version["Version and publish"]
+    version --> install["Team installs from marketplace"]
+    install --> feedback["Observe usage and feedback"]
+    feedback --> prototype
+
+    classDef start fill:#d85f42,color:#fffdf8,stroke:#182126,stroke-width:3px;
+    classDef action fill:#fffdf8,color:#182126,stroke:#182126,stroke-width:3px;
+    classDef decision fill:#efbf4b,color:#182126,stroke:#182126,stroke-width:3px;
+    classDef success fill:#147d79,color:#fffdf8,stroke:#182126,stroke-width:3px;
+    class prototype start;
+    class package,skills,agents,hooks,mcp,local,tests,feedback action;
+    class stable,valid decision;
+    class version,install success;

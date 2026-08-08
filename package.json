@@ -1,0 +1,25 @@
+{
+  "name": "savi-ai-slides",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "diagrams": "mmdc -i diagrams/skill-routing.mmd -o assets/skill-routing.svg -b transparent -w 1600 && mmdc -i diagrams/connector-execution.mmd -o assets/connector-execution.svg -b transparent -w 1600 && mmdc -i diagrams/plugin-lifecycle.mmd -o assets/plugin-lifecycle.svg -b transparent -w 1600",
+    "slides": "marp --server slides --theme-set themes/claude-course.css",
+    "slides:day1": "marp slides/day-1-skills.md --preview --watch --theme-set themes/claude-course.css --allow-local-files",
+    "slides:day2": "marp slides/day-2-connectors.md --preview --watch --theme-set themes/claude-course.css --allow-local-files",
+    "slides:day3": "marp slides/day-3-plugins.md --preview --watch --theme-set themes/claude-course.css --allow-local-files",
+    "slides:pdf": "npm run diagrams && npm run slides:pdf:day1 && npm run slides:pdf:day2 && npm run slides:pdf:day3",
+    "slides:pdf:day1": "npm run slides:prepare && marp slides/day-1-skills.md --pdf --theme-set themes/claude-course.css --allow-local-files -o dist/day-1-skills.pdf",
+    "slides:pdf:day2": "npm run slides:prepare && marp slides/day-2-connectors.md --pdf --theme-set themes/claude-course.css --allow-local-files -o dist/day-2-connectors.pdf",
+    "slides:pdf:day3": "npm run slides:prepare && marp slides/day-3-plugins.md --pdf --theme-set themes/claude-course.css --allow-local-files -o dist/day-3-plugins.pdf",
+    "slides:prepare": "node -e \"require('fs').mkdirSync('dist', { recursive: true })\"",
+    "demo:connector": "node demos/day-2-connectors/product-catalog-server.mjs",
+    "demo:test": "node demos/day-2-connectors/smoke-test.mjs"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.2.3",
+    "@mermaid-js/mermaid-cli": "^11.16.0",
+    "@modelcontextprotocol/sdk": "^1.17.2",
+    "zod": "^3.25.76"
+  }
+}

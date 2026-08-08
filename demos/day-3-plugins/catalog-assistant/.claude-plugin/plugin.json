@@ -1,0 +1,8 @@
+{
+  "name": "catalog-assistant",
+  "description": "Safe product lookup and recommendation workflows for the course demo",
+  "version": "1.0.0",
+  "author": {
+    "name": "Course Team"
+  }
+}

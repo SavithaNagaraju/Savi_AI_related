@@ -1,0 +1,27 @@
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Segoe UI","primaryColor":"#fffdf8","primaryTextColor":"#182126","primaryBorderColor":"#182126","lineColor":"#182126","secondaryColor":"#147d79","tertiaryColor":"#efbf4b"},"flowchart":{"curve":"linear"}}}%%
+flowchart LR
+    user["User goal"] --> client["Claude Code MCP client"]
+    client --> discover["Discover tools, resources, and prompts"]
+    discover --> choose{"Capability needed?"}
+    choose -->|Tool| approve{"Write or sensitive action?"}
+    choose -->|Resource| read["Read addressed context"]
+    choose -->|Prompt| prompt["Load reusable prompt"]
+    approve -->|Yes| human["Human approval"]
+    approve -->|No| invoke["Call MCP tool"]
+    human --> invoke
+    invoke --> server["MCP server validates input"]
+    server --> system["External API or data source"]
+    system --> response["Structured result"]
+    read --> response
+    prompt --> response
+    response --> client
+    client --> answer["Grounded answer or action"]
+
+    classDef start fill:#d85f42,color:#fffdf8,stroke:#182126,stroke-width:3px;
+    classDef action fill:#fffdf8,color:#182126,stroke:#182126,stroke-width:3px;
+    classDef decision fill:#efbf4b,color:#182126,stroke:#182126,stroke-width:3px;
+    classDef boundary fill:#147d79,color:#fffdf8,stroke:#182126,stroke-width:3px;
+    class user start;
+    class client,discover,read,prompt,invoke,system,response,answer action;
+    class choose,approve,human decision;
+    class server boundary;

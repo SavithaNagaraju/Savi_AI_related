@@ -1,0 +1,182 @@
+/* @theme claude-course */
+
+@import "default";
+
+:root {
+  --ink: #182126;
+  --paper: #f5f1e8;
+  --white: #fffdf8;
+  --coral: #d85f42;
+  --teal: #147d79;
+  --yellow: #efbf4b;
+  --muted: #617077;
+}
+
+section {
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(rgba(24, 33, 38, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(24, 33, 38, 0.045) 1px, transparent 1px);
+  background-size: 32px 32px;
+  color: var(--ink);
+  font-family: "Aptos Display", "Trebuchet MS", sans-serif;
+  font-size: 29px;
+  padding: 58px 72px;
+}
+
+section::before {
+  background: var(--coral);
+  content: "CLAUDE EXTENSIBILITY LAB";
+  font-size: 14px;
+  font-weight: 800;
+  left: 0;
+  letter-spacing: 1.5px;
+  padding: 10px 72px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+section::after {
+  color: var(--muted);
+  font-size: 16px;
+  right: 38px;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--ink);
+  letter-spacing: 0;
+}
+
+h1 {
+  font-size: 61px;
+  line-height: 1.05;
+}
+
+h2 {
+  border-left: 9px solid var(--coral);
+  font-size: 43px;
+  line-height: 1.1;
+  padding-left: 20px;
+}
+
+h3 {
+  color: var(--teal);
+  font-size: 28px;
+}
+
+strong {
+  color: var(--teal);
+}
+
+code {
+  background: #e4e0d7;
+  color: #9d3f29;
+}
+
+pre {
+  background: var(--ink);
+  border-left: 8px solid var(--yellow);
+  border-radius: 4px;
+  font-size: 21px;
+  line-height: 1.35;
+}
+
+blockquote {
+  border-left: 8px solid var(--teal);
+  color: var(--muted);
+  font-size: 31px;
+}
+
+table {
+  background: var(--white);
+  font-size: 24px;
+}
+
+th {
+  background: var(--ink);
+  color: var(--white);
+}
+
+img {
+  max-height: 470px;
+}
+
+section.lead,
+section.demo,
+section.closing {
+  background-image: none;
+}
+
+section.lead {
+  background: var(--ink);
+  color: var(--white);
+  padding-left: 88px;
+}
+
+section.lead::before {
+  background: var(--yellow);
+  color: var(--ink);
+}
+
+section.lead h1,
+section.lead h2,
+section.lead h3 {
+  color: var(--white);
+}
+
+section.demo {
+  background: #101619;
+  color: var(--white);
+}
+
+section.demo::before {
+  background: var(--teal);
+  color: var(--white);
+  content: "LIVE DEMO - SWITCH TO CLAUDE CODE";
+}
+
+section.demo h1,
+section.demo h2,
+section.demo h3,
+section.demo strong {
+  color: var(--white);
+}
+
+section.demo h2 {
+  border-color: var(--yellow);
+}
+
+section.exercise::before {
+  background: var(--yellow);
+  color: var(--ink);
+  content: "HANDS-ON LAB";
+}
+
+section.checkpoint::before {
+  background: var(--teal);
+  color: var(--white);
+  content: "CHECKPOINT";
+}
+
+section.closing {
+  background: var(--teal);
+  color: var(--white);
+  text-align: center;
+}
+
+section.closing::before {
+  background: var(--ink);
+  color: var(--white);
+}
+
+section.closing h1,
+section.closing h2 {
+  color: var(--white);
+}
+
+section.small {
+  font-size: 23px;
+}

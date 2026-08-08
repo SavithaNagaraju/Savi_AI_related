@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="500" viewBox="0 0 1100 500" role="img" aria-labelledby="title desc">
+  <title id="title">Three day Claude extensibility course map</title>
+  <desc id="desc">Skills become connectors, which become plugins that can be shared.</desc>
+  <rect width="1100" height="500" fill="#f5f1e8"/>
+  <path d="M330 250H470M690 250H830" stroke="#182126" stroke-width="12"/>
+  <path d="M450 225l35 25-35 25M810 225l35 25-35 25" fill="none" stroke="#182126" stroke-width="12" stroke-linecap="square"/>
+  <rect x="30" y="90" width="300" height="320" rx="12" fill="#d85f42"/>
+  <rect x="400" y="90" width="300" height="320" rx="12" fill="#147d79"/>
+  <rect x="770" y="90" width="300" height="320" rx="12" fill="#182126"/>
+  <g fill="#fffdf8" font-family="Segoe UI, sans-serif" text-anchor="middle">
+    <text x="180" y="155" font-size="28" font-weight="700">DAY 1</text>
+    <text x="180" y="235" font-size="48" font-weight="800">SKILLS</text>
+    <text x="180" y="295" font-size="23">Teach a repeatable</text>
+    <text x="180" y="330" font-size="23">way of working</text>
+    <text x="550" y="155" font-size="28" font-weight="700">DAY 2</text>
+    <text x="550" y="235" font-size="44" font-weight="800">CONNECTORS</text>
+    <text x="550" y="295" font-size="23">Reach trusted tools</text>
+    <text x="550" y="330" font-size="23">and live data</text>
+    <text x="920" y="155" font-size="28" font-weight="700">DAY 3</text>
+    <text x="920" y="235" font-size="45" font-weight="800">PLUGINS</text>
+    <text x="920" y="295" font-size="23">Package, test,</text>
+    <text x="920" y="330" font-size="23">and distribute</text>
+  </g>
+</svg>
